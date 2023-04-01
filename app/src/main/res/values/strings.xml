@@ -1,0 +1,208 @@
+<resources>
+    <string name="app_name">TranslatorApp</string>
+    <string-array name="LanguageCode">
+        af
+        am
+        ar
+        as
+        az
+        ba
+        bg
+        bn
+        bo
+        bs
+        ca
+        cs
+        cy
+        da
+        de
+        dv
+        el
+        en
+        es
+        et
+        eu
+        fa
+        fi
+        fil
+        fj
+        fo
+        fr
+
+        @SerializedName("fr-CA")
+
+        @SerializedName("ga")
+
+        @SerializedName("gl")
+
+        @SerializedName("gu")
+
+        @SerializedName("ha")
+
+        @SerializedName("he")
+
+        @SerializedName("hi")
+
+        @SerializedName("hr")
+
+        @SerializedName("hsb")
+
+        @SerializedName("ht")
+
+        @SerializedName("hu")
+
+        @SerializedName("hy")
+
+        @SerializedName("id")
+
+        @SerializedName("ig")
+
+        @SerializedName("ikt")
+
+        @SerializedName("is")
+
+        @SerializedName("it")
+
+        @SerializedName("iu")
+
+        @SerializedName("iu-Latn")
+
+        @SerializedName("ja")
+        @SerializedName("ka")
+
+        @SerializedName("kk")
+
+        @SerializedName("km")
+
+        @SerializedName("kmr")
+
+        @SerializedName("kn")
+
+        @SerializedName("ko")
+
+        @SerializedName("ku")
+
+        @SerializedName("ky")
+
+        @SerializedName("ln")
+
+        @SerializedName("lo")
+
+        @SerializedName("lt")
+
+        @SerializedName("lug")
+
+        @SerializedName("lv")
+
+        @SerializedName("lzh")
+
+        @SerializedName("mg")
+
+        @SerializedName("mi")
+
+        @SerializedName("mk")
+
+        @SerializedName("ml")
+
+        @SerializedName("mn-Cyrl")
+
+        @SerializedName("mn-Mong")
+
+        @SerializedName("mr")
+
+        @SerializedName("ms")
+
+        @SerializedName("mt")
+        SerializedName("mww")
+
+        @SerializedName("my")
+
+        @SerializedName("nb")
+
+        @SerializedName("ne")
+
+        @SerializedName("nl")
+
+        @SerializedName("nso")
+
+        @SerializedName("nya")
+
+        @SerializedName("or")
+
+        @SerializedName("otq")
+
+        @SerializedName("pa")
+
+        @SerializedName("pl")
+
+        @SerializedName("prs")
+
+        @SerializedName("ps")
+
+        pt")
+        pt-PT")
+        ro")
+ru")
+        run")
+rw")
+"sk")
+sl")
+sm")
+sn")
+"so")
+sq")
+sr-Cyrl")
+sr-Latn
+
+        st
+
+        sv
+
+   sw
+
+        ta
+
+       te
+
+        th
+
+        ti
+
+        tk
+
+        tlh-Latn
+
+        tlh-Piqd
+
+        tn
+
+        to
+
+        tr
+
+      tt
+
+        ty
+
+       ug
+
+       uk
+
+        ur
+
+        uz
+
+        vi
+
+        xh
+
+        yo
+
+       yua
+
+        yue
+       zh-Hans
+        zh-Hant
+        zu
+    </string-array>
+</resources>
