@@ -7,9 +7,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class GetLocationUseCaseImpl @Inject constructor(
+class GetLanguageUseCaseImpl @Inject constructor(
     private val repository: TranslatorRepository
-        ) : GetLocationUseCase {
+        ) : GetLanguageUseCase {
     override suspend fun invoke(): Flow<NetworkResponseState<List<LanguageResponseItem>>> =
         flow {
             emit(NetworkResponseState.Loading)

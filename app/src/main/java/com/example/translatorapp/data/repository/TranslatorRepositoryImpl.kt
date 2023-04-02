@@ -1,7 +1,11 @@
 package com.example.translatorapp.data.repository
 
 import com.example.translatorapp.data.NetworkResponseState
+import com.example.translatorapp.data.dto.detect.response.DetectResponseItem
+import com.example.translatorapp.data.dto.detect.post.PostDetectItem
 import com.example.translatorapp.data.dto.language.LanguageResponseItem
+import com.example.translatorapp.data.dto.translate.response.TranslateResponseItem
+import com.example.translatorapp.data.dto.translate.post.PostTranslateItem
 import com.example.translatorapp.data.source.RemoteDataSource
 import com.example.translatorapp.di.IoDispatcher
 import com.example.translatorapp.domain.repository.TranslatorRepository
@@ -21,4 +25,29 @@ class TranslatorRepositoryImpl @Inject constructor(
                 NetworkResponseState.Error(e)
             }
         }
+
+    override suspend fun pushTranslate(
+        post: List<PostTranslateItem>,
+        from: String,
+        to: String
+    ): NetworkResponseState<List<TranslateResponseItem>> =
+        withContext(ioDispatcher){
+            try {
+                remoteDataSource.pushTranslate(post,from,to)
+            }catch (e:Exception){
+                NetworkResponseState.Error(e)
+            }
+        }
+
+    override suspend fun detectLanguage(post: List<PostDetectItem>): NetworkResponseState<List<DetectResponseItem>> =
+        withContext(ioDispatcher){
+            try {
+                remoteDataSource.detectLanguage(post)
+            }catch (e:Exception){
+                NetworkResponseState.Error(e)
+            }
+        }
+
+
+
 }

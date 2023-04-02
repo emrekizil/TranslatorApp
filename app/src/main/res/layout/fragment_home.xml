@@ -1,13 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+    <CheckBox
+        android:id="@+id/detect_language_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/textview_background"
+        android:padding="8dp"
+        android:text="@string/detect_language"
+        android:fontFamily="@font/robotoslabmedium"
+        app:layout_constraintEnd_toStartOf="@+id/from_Spinner"
+        app:layout_constraintStart_toStartOf="@id/translate_input_container"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/translate_input_container"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="6dp"
+        app:endIconMode="clear_text"
+        app:boxStrokeColor="@color/blue"
+        app:boxStrokeWidth="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detect_language_checkBox">
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/translate_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/start_writing_text"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Spinner
+        android:id="@+id/from_Spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        style="@style/SpinnerTheme"
+        android:fontFamily="@font/robotoslabmedium"
+        app:layout_constraintBottom_toBottomOf="@+id/detect_language_checkBox"
+        app:layout_constraintEnd_toEndOf="@+id/translate_input_container"
+        app:layout_constraintStart_toEndOf="@+id/detect_language_checkBox"
+        app:layout_constraintTop_toTopOf="@+id/detect_language_checkBox" />
+
+
+    <Spinner
+        android:id="@+id/to_Spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        style="@style/SpinnerTheme"
+        android:fontFamily="@font/robotoslabmedium"
+        app:layout_constraintEnd_toStartOf="@+id/from_Spinner"
+        app:layout_constraintStart_toStartOf="@+id/detect_language_checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/flip_language" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/translate_button"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/translate"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_dark"
+        app:cornerRadius="12dp"
+        android:fontFamily="@font/ubuntubold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_text_view"
+        app:layout_constraintVertical_bias="0.72"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/result_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/textview_background"
+        android:minHeight="60dp"
+        android:padding="4dp"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:fontFamily="@font/robotoslabmedium"
+        android:backgroundTint="@color/seasalt"
+        app:layout_constraintEnd_toEndOf="@+id/translate_input_container"
+        app:layout_constraintStart_toStartOf="@+id/translate_input_container"
+        app:layout_constraintTop_toBottomOf="@id/to_Spinner" />
+
+    <TextView
+        android:id="@+id/from_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/from"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/flip_language"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/translate_input_container" />
+
+    <TextView
+        android:id="@+id/to_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/to"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/to_Spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flip_language" />
+
+    <ImageButton
+        android:id="@+id/flip_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:src="@drawable/flip_icon"
+        android:layout_marginVertical="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/to_Spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/translate_input_container" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
